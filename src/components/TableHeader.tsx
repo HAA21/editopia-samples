@@ -12,7 +12,7 @@ const TableHeader = ({ onAddNew }: TableHeaderProps) => {
       <div>
         <h1 className="text-2xl font-bold text-gray-800">Samples Table</h1>
         <p className="text-gray-500 mt-1">
-          View, edit and manage records from the samples table
+          View, search, edit and manage records from the samples table
         </p>
       </div>
       <Button 

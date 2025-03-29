@@ -4,7 +4,6 @@ import { useForm } from "react-hook-form";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { X } from "lucide-react";
 import { Sample } from "@/services/databaseService";
 import { 
@@ -61,23 +60,6 @@ const SampleForm = ({ sample, onSubmit, onCancel, columns }: SampleFormProps) =>
                   {...field} 
                   value={field.value || ''}
                 />
-              ) : column === 'status' ? (
-                <Select 
-                  onValueChange={field.onChange} 
-                  value={field.value}
-                  defaultValue={field.value}
-                >
-                  <FormControl>
-                    <SelectTrigger>
-                      <SelectValue placeholder="Select status" />
-                    </SelectTrigger>
-                  </FormControl>
-                  <SelectContent>
-                    <SelectItem value="Active">Active</SelectItem>
-                    <SelectItem value="Inactive">Inactive</SelectItem>
-                    <SelectItem value="Pending">Pending</SelectItem>
-                  </SelectContent>
-                </Select>
               ) : (
                 <Input 
                   placeholder={`Enter ${column.replace(/_/g, ' ')}`} 

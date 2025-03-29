@@ -17,7 +17,8 @@ export const databaseService = {
       await new Promise(resolve => setTimeout(resolve, 300));
       
       // These would come from the database schema
-      return ["id", "name", "description", "created_at", "status"];
+      // Removed status and created_at
+      return ["id", "name", "description"];
     } catch (error) {
       console.error("Failed to fetch columns:", error);
       toast.error("Failed to load table structure");
@@ -37,10 +38,11 @@ export const databaseService = {
       }
       
       // Return sample data for first load
+      // Removed status and created_at fields
       const sampleData = [
-        { id: 1, name: "Sample 1", description: "First sample entry", created_at: "2023-07-15", status: "Active" },
-        { id: 2, name: "Sample 2", description: "Second sample entry", created_at: "2023-08-20", status: "Inactive" },
-        { id: 3, name: "Sample 3", description: "Third sample entry", created_at: "2023-09-05", status: "Pending" },
+        { id: 1, name: "Sample 1", description: "First sample entry" },
+        { id: 2, name: "Sample 2", description: "Second sample entry" },
+        { id: 3, name: "Sample 3", description: "Third sample entry" },
       ];
       
       localStorage.setItem("samples", JSON.stringify(sampleData));
